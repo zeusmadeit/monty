@@ -12,11 +12,11 @@ void _queue(stack_t **doubly, unsigned int cline)
 	(void)doubly;
 	(void)cline;
 
-	vglo.lifo = 0;
+	gvar.m_stack = 0;
 }
 
 /**
- * _stack - sets the format fo the data to a stack (LIFO)
+ * _stack - sets the format fo the data to a stack (m_stack)
  *
  * @doubly: head of the linked list
  * @cline: line number;
@@ -27,7 +27,7 @@ void _stack(stack_t **doubly, unsigned int cline)
 	(void)doubly;
 	(void)cline;
 
-	vglo.lifo = 1;
+	gvar.m_stack = 1;
 }
 
 /**
@@ -50,7 +50,7 @@ void _add(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", cline);
-		free_vglo();
+		free_gvar();
 		exit(EXIT_FAILURE);
 	}
 
@@ -92,7 +92,7 @@ void _sub(stack_t **doubly, unsigned int cline)
 	if (m < 2)
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n", cline);
-		free_vglo();
+		free_gvar();
 		exit(EXIT_FAILURE);
 	}
 

@@ -16,7 +16,7 @@
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, m_stack, FIFO Holberton project
  */
 typedef struct stack_s
 {
@@ -27,7 +27,7 @@ typedef struct stack_s
 
 /**
  * struct globals - global structure to use in the functions
- * @lifo: is stack or queue
+ * @m_stack: monty stack for the interpreter
  * @cont: current line
  * @arg: second parameter inside the current line
  * @head: doubly linked list
@@ -36,7 +36,7 @@ typedef struct stack_s
  */
 typedef struct globals
 {
-	int lifo;
+	int m_stack;
 	unsigned int cont;
 	char  *arg;
 	stack_t *head;
@@ -50,7 +50,7 @@ typedef struct globals
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, m_stack, FIFO Holberton project
  */
 typedef struct instruction_s
 {
@@ -58,7 +58,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern global_t vglo;
+extern global_t gvar;
 
 /* opcode_instructuions*/
 void _push(stack_t **stack, unsigned int line_number);
@@ -95,6 +95,6 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 
 /* main */
-void free_vglo(void);
+void free_gvar(void);
 
 #endif

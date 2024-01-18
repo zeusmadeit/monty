@@ -16,7 +16,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 	if (!temp)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_vglo();
+		free_gvar();
 		exit(EXIT_FAILURE);
 	}
 	temp->n = n;
@@ -53,7 +53,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	if (!temp)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_vglo();
+		free_gvar();
 		exit(EXIT_FAILURE);
 	}
 	temp->n = n;
